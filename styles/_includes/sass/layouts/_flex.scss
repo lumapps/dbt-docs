@@ -1,0 +1,50 @@
+$basis: $component-break + $component-buffer;
+
+.flex-row {
+	@include flex-row;
+	@include flex-wrap;
+}
+.flex-column {
+	@include flex-column;
+	@include flex(1,1,$basis);
+	@for $i from 1 through 12 {
+		&-#{$i} {
+			@include flex(1,1,$basis*$i);
+		}
+	}
+}
+
+.flex-nowrap {
+	@include flex-wrap(nowrap);
+}
+
+.flex-buffer {
+	margin: 0 $component-buffer/-4;
+}
+
+.flex-flush {
+	@include set(margin-top margin-bottom,$component-buffer/-4);
+}
+
+.flex-item {
+	.flex-column > & { @include flex(1,1,auto); }
+	.flex-row > & { @include flex(1,0,$component-break); }
+	.flex-buffer & { margin: $component-buffer/4; }
+}
+.flex-item-sm {
+	.flex-column > & { @include flex(1,1,auto); }
+	.flex-row > & { @include flex(1,0,$component-break/2); }
+	.flex-buffer & { margin: $component-buffer/8; }
+}
+
+.flex-grow {
+	@include flex(1,0);
+}
+
+.flex-auto {
+	@include flex(0,0);
+}
+
+.flex-shrink {
+	@include flex(0,1);
+}

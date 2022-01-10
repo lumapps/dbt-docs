@@ -1,0 +1,14 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+env/
+.tmp/
+.sass-cache/
+styles/_site/
+styles/.sass-cache/
+styles/.jekyll-cache/
+styles/.jekyll-metadata

@@ -1,2 +1,3 @@
-# dbt-docs
-Code to generate the docsite for the data warehouse
+# dbt docs
+
+Documentation for the data lake, based of the dbt-docs repo

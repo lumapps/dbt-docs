@@ -1,0 +1,19 @@
+{% assign types = include.type %}
+{% unless types contains 'link' %}
+	{% capture icn_on %}<svg class="icn menu-icon-on"><use xlink:href="#icn-{% if types contains 'main' %}down{% else %}{{types}}-on{% endif %}"></use></svg>{% endcapture %}
+	{% capture icn_off %}<svg class="icn menu-icon-off"><use xlink:href="#icn-{% if types contains 'main' %}right{% else %}{{types}}{% endif %}"></use></svg>{% endcapture %}
+{% endunless %}
+{% assign types = types | replace: 'dir','tree' | replace: 'doc','node' | split: ',' %}
+
+{% assign end_chars = 15 %}
+{% assign end = include.name | split: '' | reverse | join: '' | truncate: end_chars,'' | split: '' | reverse | join: '' %}
+{% assign endsize = include.name.size | minus: end.size %}
+{% assign start = include.name | truncate: endsize,'' %}
+
+<a href="{% if include.link %}{{site.baseurl}}{{include.link}}{% else %}#{% endif %}" class="{% for type in types %} menu-{{type}} {% endfor %} {{include.class}}" title="{{include.name}}">
+	<span class="filename">
+		<span class="filename-normal">{{icn_on}}{{icn_off}}</span><span class="filename-ellip">{{start}}</span><span class="filename-normal">{{end}}</span>
+	</span>
+</a>
+
+

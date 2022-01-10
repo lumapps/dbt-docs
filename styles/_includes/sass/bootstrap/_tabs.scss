@@ -1,0 +1,88 @@
+
+.nav-tabs {
+	border: 0;
+	box-shadow: 0 1px 0 $line;
+	color: $dark;
+	&:before, &:after { display: none; }
+	@include flex-row;
+	@include flex-wrap;
+	> li {
+		float: none;
+		@include flex(0,0,auto);
+		background: transparent !important;
+		margin: 0;
+		&:not(:first-child) { margin-left: .75em; }
+		&:not(:last-child) { margin-right: .75em; }
+		> a,
+		> span {
+			display: block;
+			line-height: $component-line-height;
+			background: transparent !important;
+			padding: $padding-large-vertical 0;
+			margin: 0 !important;
+			border: 0 !important;
+			border-radius: 0;
+		}
+		&.active {
+			box-shadow: 0 1px 0 $link;
+			a {
+				color: $dark;
+			}
+		}
+	}
+	&-sm {
+		> li {
+			> a,
+			> span {
+				@include font-size-small;
+				padding: $padding-base-vertical 0;
+
+			}
+		}
+	}
+	&-fill {
+		> li {
+			@include flex(1,0,auto);
+			margin: 0 !important;
+			> a,
+			> span {
+				text-align: center;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+	}
+	html.touch & {
+		@include flex-wrap(nowrap);
+		overflow: hidden;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+	.card-tabs & {
+		background: $silver;
+		border-radius: $border-radius-base $border-radius-base 0 0;
+		> li {
+			&:first-child { border-top-left-radius: $border-radius-base; }
+			&:last-child { border-top-right-radius: $border-radius-base; }
+			&.active {
+				box-shadow: 0 1px 0 white !important;
+				background: white !important;
+			}
+		}
+	}
+}
+
+
+
+.tab-content{
+	> .tab-pane {
+		height: 0;
+		display: block;
+		overflow: hidden;
+		&:not(.active) { padding: 0; }
+		&.active {
+			height: auto;
+			overflow: visible;
+		}
+	}
+}
