@@ -142,9 +142,6 @@ angular
                 service.files.manifest.nodes[node.unique_id] = node;
             });
 
-            var adapter = service.files.manifest.metadata.adapter_type;
-            var macros = clean_project_macros(service.files.manifest.macros, adapter);
-            service.files.manifest.macros = macros;
 
             var project = incorporate_catalog(service.files.manifest, service.files.catalog);
 
@@ -222,16 +219,11 @@ angular
 
             service.project = project;
 
-            // performance hack
-            var search_macros = _.filter(service.project.macros, function(macro) {
-                return !macro.is_adapter_macro_impl;
-            });
-
             var search_nodes = _.filter(service.project.nodes, function(node) {
-                return _.includes(['model', 'source', 'seed', 'snapshot', 'analysis', 'exposure', 'metric'], node.resource_type);
+                return _.includes(['model', 'snapshot', 'metric'], node.resource_type);
             });
 
-            service.project.searchable = _.filter(search_nodes.concat(search_macros), function(obj) {
+            service.project.searchable = _.filter(search_nodes, function(obj) {
                 // It should not be possible to search for hidden documentation
                 return !obj.docs || obj.docs.show;
             });
@@ -336,15 +328,11 @@ angular
                     return true;
                 }
 
-                var accepted = ['snapshot', 'source', 'seed', 'model', 'analysis', 'exposure', 'metric'];
+                var accepted = ['snapshot', 'model', 'metric'];
                 return _.includes(accepted, node.resource_type);
             })
 
-            service.tree.database = buildDatabaseTree(nodes, select);
             service.tree.project = buildProjectTree(nodes, macros, select);
-
-            var sources = _.values(service.project.sources);
-            service.tree.sources = buildSourceTree(sources, select);
 
             var exposures = _.values(service.project.exposures);
             service.tree.exposures = buildExposureTree(exposures, select);
@@ -570,7 +558,7 @@ angular
 
         _.each(nodes.concat(macros), function(node) {
             var show = _.get(node, ['docs', 'show'], true);
-            if (node.resource_type == 'source' || node.resource_type == 'exposure' || node.resource_type == 'metric') {
+            if (node.resource_type == 'macro' || node.resource_type == 'test' || node.resource_type == 'source' || node.resource_type == 'exposure' || node.resource_type == 'metric') {
                 // no sources in the model tree, sorry
                 return;
             } else if (!show) {

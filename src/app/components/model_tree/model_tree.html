@@ -13,29 +13,6 @@
         </li>
 
         <li>
-            <div class="switches">
-                <div class="switch ">
-                    <span
-                       class="switch-label btn btn-sm"
-                       ng-class="{active: (nav_selected == 'project')}"
-                       ng-click="nav_selected = 'project'">
-                        <svg class="icn menu-icon-on"><use xlink:href="#icn-dir-on"></use></svg>
-                        Project
-                    </span>
-                </div>
-                <div class="switch">
-                    <span
-                       class="switch-label btn btn-sm"
-                       ng-class="{active: (nav_selected == 'database')}"
-                       ng-click="nav_selected = 'database'">
-                        <svg class="icn menu-icon-on"><use xlink:href="#icn-tree-on"></use></svg>
-                        Database
-                    </span>
-                </div>
-            </div>
-        </li>
-
-        <li>
             <div class="menu" ng-show="nav_selected == 'project'">
                 <div ng-show="tree.sources.length > 0">
                     <strong>Sources</strong>
@@ -70,7 +47,6 @@
                     <br />
                 </div>
 
-                <strong>Projects</strong>
                 <ul>
                     <model-tree-line
                         item="item"

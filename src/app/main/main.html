@@ -7,25 +7,25 @@
     width: 140px;
     height: 46px ;
 }
+
+.lumapps-dbt-drawer {
+    background-color: #F5F6FA;
+}
+
 </style>
 
 <div>
-    <graph-launcher></graph-launcher>
-
     <div class="app app-row">
         <div class="app-menu app-column">
             <div class="app-overlay" data-toggle=".app-menu"></div>
-            <div class="app-header app-navbar app-shadow app-pad">
+            <div class="app-header app-navbar app-shadow app-pad lumapps-dbt-drawer">
                 <div class="app-row app-middle">
                     <div class="app-body">
-                        <div class="logo">
-                            <img style="width: 100px; height: 40px" class="logo" ng-src="{{ logo }}" />
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="app-body">
-                <div class="app-scroll app-pad app-flush-right no-x-overflow">
+                <div class="app-scroll app-pad app-flush-right no-x-overflow lumapps-dbt-drawer">
                     <model-tree tree="tree"></model-tree>
                 </div>
             </div>

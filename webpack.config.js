@@ -10,7 +10,7 @@ module.exports = {
     BUILD_ENV == "development" ? "eval-cheap-module-source-map" : "source-map",
   entry: "./src/app/index.run.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
   },
   devServer: {
     contentBase: "./src",
