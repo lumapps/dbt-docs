@@ -1,0 +1,53 @@
+
+
+.layout {
+	width: 100vw;
+	height: 100vh;
+	min-width: $tablet;
+	@include scroll;
+	&-pad { @include set(padding-top padding-bottom,20px); }
+	&-ide {
+            height: calc(100vh - 53px);
+        }
+	&-pad-l, &-pad-x { padding-left: 20px; }
+	&-pad-r, &-pad-x { padding-right: 20px; }
+	&-sticky {
+		position: sticky;
+		z-index: 20;
+		top: 0;
+	}
+	&-frame {
+		margin: auto;
+		width: 90%;
+		@include set(padding-left padding-right,20px);
+		.layout-menu & { padding-right: 0; }
+	}
+	&-navigation {
+		@include shadow;
+		background: white;
+		height: $navigation-height;
+		position: absolute;
+		@include set(top left right,0);
+	}
+	&-content {
+		position: absolute;
+		top: ($navigation-height + 1px);
+		@include set(bottom left right,0);
+		@include scroll;
+	}
+	&-row {
+		@include flex-row;
+	}
+	&-alert {
+		@include flex(0,0,100%);
+	}
+	&-menu {
+		@include flex(0,0,percentage(1/4));
+		max-width: 300px;
+		min-width: 0;
+	}
+	&-body {
+		@include flex(1,1,auto);
+		box-shadow: 0 -1px 0 $outline;
+	}
+}

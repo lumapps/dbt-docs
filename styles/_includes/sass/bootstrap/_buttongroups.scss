@@ -1,0 +1,10 @@
+.btn-toolbar {
+	margin-left: -2px;
+	margin-right: -2px;
+	font-size: 0;
+	.btn-group {
+		margin-left: 2px;
+		margin-right: 2px;
+		float: none;
+	}
+}

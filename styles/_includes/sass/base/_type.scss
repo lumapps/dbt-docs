@@ -1,0 +1,88 @@
+body {
+	@include font-size-base;
+	font-family: $font-family-base;
+	background: $body-bg;
+	color: $text-color;
+}
+
+*, dt, dd {
+	@include line-height($line-height-base);
+	text-align: inherit;
+}
+
+// ELEMENTS -------------------------------------------------------
+
+a, .a {
+	cursor: pointer;
+	color: $link-color;
+	text-decoration: none; 
+	@include active { text-decoration: none; color: $link-hover-color; }
+}
+i, .i, em, .em { font-style: oblique; }
+b, .b, strong, .strong { font-weight: bold; }
+mark { background: $state-info-bg; color: $dark; padding: .1em 0; @include radius; }
+.normal { font-weight: normal !important; }
+
+// MARGINS -------------------------------------------------------
+
+iframe { margin: 0; display: block; }
+label { margin: .5em 0; font-weight: normal; }
+hr { margin: 3em 0; border-top: 1px solid $hr-border; }
+blockquote, ul, ol, p, .field, .table { margin: 1.5em 0; }
+#{h()} { margin: 1.5em 0 .5em; }
+ul, ol { padding-left: 1.25em; }
+dl { dt + dd { margin-bottom: 1em; } }
+blockquote { padding: 0; font-size: inherit; }
+
+// SIZES -------------------------------------------------------
+
+small, .small, .text-small { @include font-size-small; }
+#{h()} { font-weight: bold; letter-spacing: .01em; }
+#{h(5,6)}, .text-base { @include font-size-base; }
+#{h(4)}, .text-large { @include font-size-large; }
+#{h(3)}, .text-larger { @include font-size-larger; }
+#{h(1,2)}, .text-largest { @include font-size-largest; }
+
+// FONTS -------------------------------------------------------
+
+.text-body { font-family: $font-family-base; }
+.text-mono { font-family: $font-family-monospace; font-size: $font-size-code !important; }
+.text-smallcaps { @include smallcaps; }
+
+// ALIGNMENT -------------------------------------------------------
+
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+
+@include large(){
+	.text-center-large { text-align: center !important; }
+	.text-right-large { text-align: right !important; }
+	.text-left-large { text-align: left !important; }
+}
+
+@include small(){
+	.text-center-small { text-align: center !important; }
+	.text-right-small { text-align: right !important; }
+	.text-left-small { text-align: left !important; }
+}
+
+// WRAPPING -------------------------------------------------------
+
+.nowrap { @include min-mini(){ white-space: nowrap; } }
+.condensed { white-space: nowrap; width: 1px; }
+.ellipsis { width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wrap { white-space: normal; }
+.break { word-break: break-word; }
+
+// SPACING -------------------------------------------------------
+
+.buffer { @include set(margin-top margin-bottom, 20px); }
+
+*:first-child { margin-top: 0; }
+*:last-child { margin-bottom: 0; }
+
+.margin-right { margin-right: .75em !important; }
+.margin-left { margin-left: .75em !important; }
+.margin-right-small { margin-right: .375em !important; }
+.margin-left-small { margin-left: .375em !important; }

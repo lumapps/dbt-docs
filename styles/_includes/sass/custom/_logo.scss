@@ -1,0 +1,13 @@
+.logo {
+	display: block;
+	overflow: hidden;
+	&, svg { height: 25px; width: 88px; }
+	color: $dark;
+	svg {
+		fill: currentColor;
+		top: -1px;
+	}
+	@include max-phone {
+		width: 25px;
+	}
+}

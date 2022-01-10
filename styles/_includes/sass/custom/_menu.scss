@@ -1,0 +1,42 @@
+.menu {
+	margin: 0 -5px;
+	@include font-size-small;
+	ul {
+		@include clean;
+		display: none;
+		ul { margin-left: 23px; }
+	}
+	a {
+		color: $gray-darker;
+		display: block;
+		padding: 3px 5px;
+		border-radius: $border-radius-base;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		&.menu-tree { color: $light; }
+		&.menu-main { @include font-size-base; margin-bottom: .25em; font-weight: bold; color: $dark; }
+		&.active:not(.not-active) { color: $dark; }
+		@include active { 
+			background: $silver;
+			color: $dark;
+		}
+		&.menu-node,
+		&.menu-link {
+			&.active:not(.not-active) {
+				background: $silver-dark;
+				color: $dark;
+			}
+		}
+	}
+	.icn { margin-right: 8px; }
+	> ul,
+	.active + ul {
+		display: block;
+	}
+	
+}
+
+
+.menu-icon-on { a:not(.active) & { display: none; } }
+.menu-icon-off { a.active & { display: none; } }
