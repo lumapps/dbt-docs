@@ -1,0 +1,11 @@
+.avatar {
+	display: inline-block;
+	vertical-align: middle;
+	img {
+		display: block;
+		@include circle;
+		@include set(height width,28px);
+	}
+	&-square img { @include radius; }
+	&-sm img { @include set(height width,20px); }
+}
