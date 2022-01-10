@@ -1,0 +1,46 @@
+<div class="section-content">
+    <h6>Details</h6>
+    <div class="panel">
+        <div class="panel-body">
+            <div class="details">
+                <div class="details-content">
+                    <div class="detail-group" ng-if="hasData(meta)">
+                        <div class="detail-body">
+                            <dl class="detail"
+                                ng-repeat="(k, v) in meta">
+                                <dt class="detail-label">{{ k }}</dt>
+                                <dd class="detail-value">{{ v }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-body">
+                            <dl class='detail' ng-if="model.tags != undefined && exclude.indexOf('tags') == -1">
+                                <dt class="detail-label">Tags</dt>
+                                <dd ng-if="model.tags.length > 0" class="detail-value">
+                                    <span ng-repeat="tag in model.tags"><code><a ng-click=queryTag(tag)>{{ tag }}</a></code>&nbsp;</span>
+                                </dd>
+                                <dd ng-if="model.tags.length == 0" class="detail-value">untagged</dd>
+                            </dl>
+                            <dl class="detail"
+                                ng-repeat="item in details">
+                                <dt class="detail-label">{{ item.name }}</dt>
+                                <dd class="detail-value">{{ item.value }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="detail-group" ng-if="hasData(extended)">
+                        <div class="detail-body">
+                            <dl class="detail"
+                                ng-repeat="item in extended"
+                                ng-if="item.include">
+                                <dt data-toggle="tooltip" title="{{ item.description }}" class="detail-label">{{ item.label }}</dt>
+                                <dd class="detail-value">{{ item.value }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
