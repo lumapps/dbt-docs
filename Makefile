@@ -1,5 +1,5 @@
 
-.PHONY: clean dist dev
+.PHONY: clean docs dev
 
 dev:
 	DBT_DOCS_ENV=development npm start
@@ -10,18 +10,12 @@ watch:
 test:
 	npm test
 
-dist: clean
+docs: clean
 	DBT_DOCS_ENV=production webpack
-	rm -rf dist/fonts dist/main.js dist/main.js.map
+	rm -rf docs/fonts docs/main.js docs/main.js.map
 
-submodule:
-	git submodule init
-	git submodule update
+style:
 	jekyll build -s styles/ -d styles/_site
 
-dist-ci: clean submodule test
-	DBT_DOCS_ENV=production webpack
-	cp data/*.json dist/
-
 clean:
-	rm -rf dist/
+	rm -rf docs/
