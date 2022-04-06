@@ -1,0 +1,28 @@
+{
+    "timeZone": "Pacific/Pago_Pago",
+    "dependencies": {
+      "libraries": [
+        {
+          "userSymbol": "OAuth2",
+          "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
+          "version": "41"
+        }
+      ]
+    },
+    "oauthScopes": [
+      "https://www.googleapis.com/auth/script.external_request"
+    ],
+    "dataStudio": {
+      "name": "Lumapps Datalake",
+      "logoUrl": "https://avatars.githubusercontent.com/u/2465187?s=200&v=4",
+      "company": "Lumapps",
+      "companyUrl": "https://www.lumapps.com/",
+      "addonUrl": "https://www.lumapps.com/",
+      "supportUrl": "https://www.lumapps.com/",
+      "description": "Get Lumapps Datalake data.",
+      "advancedServices": {
+        "schema": true,
+        "data": true
+      }
+    }
+  }
