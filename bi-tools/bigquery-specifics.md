@@ -1,8 +1,16 @@
 # BigQuery Specifics
 
-The data is stored in a format optimal for Google BigQuery. We list below the things that you might need to know about those caveats
+## Table name in BigQuery
+
+In BigQuery, the tables are named using the following format : `<project>.<dataset>.<table>`
+
+_Example: The table located on the `hm-prod-go-cell-005` project is named `hm-prod-go-cell-005.gold.dim_contents__ext`_
+
+The project hosting your data should have been given to you by your Lumapps Representative. It looks like `hm-prod-{go/ms}-cell-XXX`
 
 ## Denormalization
+
+The data is stored in a format optimal for Google BigQuery. We list below the things that you might need to know about those caveats
 
 We denormalize as much as possible in the dimension tables using [STRUCT](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#struct_type). Data about the `site` is therefore accessible in the `dim_contents__ext` table.
 
