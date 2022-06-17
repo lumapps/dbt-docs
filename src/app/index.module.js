@@ -31,7 +31,11 @@ config(['markedProvider', '$locationProvider',
             return "<table class='table'><thead>" + header + "</thead><tbody>"+ body + "</tbody></table>"
         }
     });
-
+    markedProvider.setRenderer({
+        link: function(href, title, text) {
+          return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
+        }
+    });
 
     $locationProvider.html5Mode({
         enabled: false,
