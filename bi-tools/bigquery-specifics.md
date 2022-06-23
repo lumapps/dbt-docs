@@ -41,7 +41,7 @@ SELECT c.id, c.created_at, c.published_at, c.site.status as site_status, c.site.
 (SELECT value from unnest(c.slug) where code="en") as content_slug,
 (SELECT value from unnest(c.site.title) where code="en") as site_title,
 (SELECT value from unnest(c.custom_content_type.name) where code="en") as content_type_name,
-FROM hm-prod-go-cell-005.gold.dim_contents__ext c 
+FROM hm-prod-go-cell-005.external.dim_contents__ext c 
 ```
 
 ### Example 2 : Defaulting to any language 
@@ -54,5 +54,5 @@ SELECT c.id, c.created_at, c.published_at, c.site.status as site_status, c.site.
 (SELECT value from unnest(c.slug) order by code) as content_slug,
 (SELECT value from unnest(c.site.title) order by code) as site_title,
 (SELECT value from unnest(c.custom_content_type.name) order by code) as content_type_name,
-FROM hm-prod-go-cell-005.gold.dim_contents__ext c 
+FROM hm-prod-go-cell-005.external.dim_contents__ext c 
 ```
