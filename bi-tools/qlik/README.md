@@ -48,7 +48,7 @@ SELECT c.id, c.created_at, c.published_at, c.site.status as site_status, c.site.
 (SELECT value from unnest(c.slug) where code="en") as content_slug,
 (SELECT value from unnest(c.site.title) where code="en") as site_title,
 (SELECT value from unnest(c.custom_content_type.name) where code="en") as content_type_name,
-FROM hm-prod-go-cell-005.gold.dim_contents__ext c 
+FROM hm-prod-go-cell-005.external.dim_contents__ext c 
 ```
 
 You can now load the data
