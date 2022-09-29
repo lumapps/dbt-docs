@@ -4,6 +4,7 @@ const angular = require('angular');
 const templates = {
     main: require('./main/main.html'),
     overview: require('./overview/overview.html'),
+    changelog: require('./changelog/changelog.html'),
 
     model: require('./docs/model.html'),
     metric: require('./docs/metric.html'),
@@ -32,6 +33,19 @@ angular
             url: 'overview/:project_name?' + graph_params,
             controller: 'OverviewCtrl',
             templateUrl: templates.overview,
+            params: {
+                project_name: {type: 'string'}
+            }
+        })
+        .state('dbt.changelog', {
+            url: 'changelog?' + graph_params,
+            controller: 'ChangelogCtrl',
+            templateUrl: templates.changelog,
+        })
+        .state('dbt.project_changelog', {
+            url: 'changelog/:project_name?' + graph_params,
+            controller: 'ChangelogCtrl',
+            templateUrl: templates.changelog,
             params: {
                 project_name: {type: 'string'}
             }
