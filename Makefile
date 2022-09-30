@@ -15,7 +15,7 @@ docs: clean
 	rm -rf docs/fonts docs/main.js docs/main.js.map
 
 style:
-	jekyll build -s styles/ -d styles/_site
+	bundle exec jekyll build -s styles/ -d styles/_site
 
 clean:
 	rm -rf docs/
