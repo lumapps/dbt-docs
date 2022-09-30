@@ -80,10 +80,12 @@
 				<div class="app-body">
 					<div class="app-scroll app-pad app-flush-right">
 						{% capture overviewclass %}{% if page.menu == 'overview' %}active{% endif %}{% endcapture %}
+						{% capture changelogclass %}{% if page.menu == 'changelog' %}active{% endif %}{% endcapture %}
 						{% capture nodeclass %}{% if page.menu == 'node' %}active{% endif %}{% endcapture %}
 						<div class="menu">
 							<ul>
 								<li>{% include menu.html type="link,main" name="Overview" class=overviewclass link="/overview" %}</li>
+								<li>{% include menu.html type="link,main" name="Changelog" class=changelogclass link="/changelog" %}</li>
 							</ul>
 						</div>
 						<div class="switches">

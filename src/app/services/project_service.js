@@ -9,7 +9,7 @@ angular
 .module('dbt')
 .factory('project', ['$q', '$http', function($q, $http) {
 
-    var TARGET_PATH = '';
+    var TARGET_PATH = 'https://storage.googleapis.com/datalake-external-doc/assets/';
 
     var service = {
         project: {},

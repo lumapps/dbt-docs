@@ -8,6 +8,7 @@ require('./docs');
 require('./graph');
 require('./main');
 require('./overview');
+require('./changelog')
 require('./sources');
 
 require('./index.routes.js');
