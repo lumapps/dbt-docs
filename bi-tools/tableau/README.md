@@ -2,7 +2,9 @@
 
 ## Connecting Tableau software to the lumapps datalake
 
-**prerequisite**: You already have created a service account and this service account was given proper permissions by the lumapps team.
+**prerequisite**:
+* You already have created a service account and this service account was given proper permissions by the lumapps team.
+* You have access to Tableau Desktop, connection to BigQuery via service account is not yet supported by Tableau Online.
 
 ### Step 1 : BigQuery Connector
 
