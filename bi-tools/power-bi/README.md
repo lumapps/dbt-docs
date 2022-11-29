@@ -23,6 +23,7 @@
 
 ![advanced settings](assets/3-settings.png)
 - Select the "Billing Project" : `lumapps-datalake-external`
+- Set "Use Storage API" to : `false`
 - ID of the project is necessary to fill a custom SQL Query : `lumapps-datalake-external`
 - You will also need to fill a custom SQL query.
 
