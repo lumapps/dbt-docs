@@ -65,7 +65,7 @@ The source code can be found [here](./examples)
 
 ### Step 2 : Going further
 
-In the previous step, you created your first Looker Studio connector and you shared it within your organization via a dLooker Studioatastudio datastource or a Looker Studio report
+In the previous step, you created your first Looker Studio connector and you shared it within your organization via a Looker Studio datasource or a Looker Studio report
 You might want to explore other data in the lumapps datalake.
 
 To do so :
