@@ -1,8 +1,8 @@
-# Using Google Data Studio with the Lumapps Datalake
+# Using Google Looker Studio with the Lumapps Datalake
 
-## Connecting Google Data Studio to the lumapps datalake
+## Connecting Google Looker Studio to the lumapps datalake
 
-This documentation explains how you can setup a connection from google datastudio to the Lumapps Datalake.
+This documentation explains how you can setup a connection from google lookerstudio to the Lumapps Datalake.
 
 
 **prerequisite**:
@@ -10,10 +10,10 @@ This documentation explains how you can setup a connection from google datastudi
 
 ### Step 1 : Create your first connector based of an example
 
-DataStudio does not support natively the connection to google BigQuery via Service Account.
+Looker Studio does not support natively the connection to google BigQuery via Service Account.
 
-If you want to connect Datastudio to BigQuery using a service account, you need to setup a custom connector.
-Google gives an example of how it could be done in [their documentation](https://developers.google.com/datastudio/solution/blocks/using-service-accounts) 
+If you want to connect Looker Studio to BigQuery using a service account, you need to setup a custom connector.
+Google gives an example of how it could be done in [their documentation](https://developers.google.com/looker-studio/connector/use-a-service-account)
 
 Lumapps tested this method and the connector we built can be used as a template.
 The source code can be found [here](./examples)
@@ -42,12 +42,12 @@ The source code can be found [here](./examples)
 
 ![Deploy](assets/4-deploy.jpg)
 
-13. If your deployment is correct, you should see a **DataStudio URL**. Click on it.
+13. If your deployment is correct, you should see a **Looker Studio URL**. Click on it.
 
 ![Check deployment](assets/5-deploy-success.jpg)
 
 14. **Authorize** the connector, and allow the requested permission. Then click on **Connect**
-15. You can now create a Google datastudio "Datastource"
+15. You can now create a Google Looker Studio "Datastource"
     1. Rename it as you like, you might share it within your organization so the name you choose need to make sense in that context.
     2. rename/hide dimensions as you would like.
     3. create new fields to expose new "Metrics" as you would like.
@@ -65,7 +65,7 @@ The source code can be found [here](./examples)
 
 ### Step 2 : Going further
 
-In the previous step, you created your first datastudio connector and you shared it within your organization via a datastudio datastource or a datastudio report
+In the previous step, you created your first Looker Studio connector and you shared it within your organization via a Looker Studio datasource or a Looker Studio report
 You might want to explore other data in the lumapps datalake.
 
 To do so :

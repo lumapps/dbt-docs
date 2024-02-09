@@ -12,7 +12,7 @@
     "oauthScopes": [
       "https://www.googleapis.com/auth/script.external_request"
     ],
-    "dataStudio": {
+    "lookerStudio": {
       "name": "Lumapps Datalake",
       "logoUrl": "https://avatars.githubusercontent.com/u/2465187?s=200&v=4",
       "company": "Lumapps",
