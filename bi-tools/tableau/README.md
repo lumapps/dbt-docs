@@ -1,6 +1,6 @@
-# Using Tableau Software with the Lumapps Datalake
+# Using Tableau Software with the LumApps Datalake
 
-## Connecting Tableau software to the lumapps datalake
+## Connecting Tableau software to the LumApps datalake
 
 **prerequisite**:
 * You already have created a service account and this service account was given proper permissions by the lumapps team.
