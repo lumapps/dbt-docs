@@ -70,6 +70,6 @@ You might want to explore other data in the lumapps datalake.
 
 To do so :
 
-1. **Explore** the data available on the [documentation](https://developer.lumapps.com/datalake)
+1. **Explore** the data available on the [documentation](https://developer.lumapps.com/documentation/datalake.html)
 2. **Create your own new connectors** by replicating what you did in the tutorial and updating the SQL query within the connector.
    1. Read about [BigQuery Specifics](../bigquery-specifics.md)
